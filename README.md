@@ -5,7 +5,7 @@ Use paket and modify project file to include .fsx utils module
 github RickyYCheng/utils.fs:main utils.fsx
 ```
 
-But we must add in project manually instead of using `paket.references`. 
+But we must reference in project file manually instead of using `paket.references`. 
 ```fsproj
 <Compile Include="..\..\paket-files\RickyYCheng\utils.fs\utils.fsx" Link="utils.fsx" />
 ```
