@@ -1,6 +1,6 @@
 [<AutoOpen>]
 module Utils
-
+#nowarn 42
 let inline bitcast<'a, 'b> (x:'a) = (# "" x : 'b #)
 
 /// target netstandard2.0
