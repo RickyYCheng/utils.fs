@@ -1,6 +1,8 @@
 [<AutoOpen>]
 module Utils
 
+let inline bitcast<'a, 'b> (x:'a) = (# "" x : 'b #)
+
 /// target netstandard2.0
 type [<AbstractClass; Sealed>] Random() = 
     static let _global = System.Random()
