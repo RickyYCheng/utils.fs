@@ -11,7 +11,8 @@ let inline stackalloc<'a when 'a: unmanaged> (length: int): Span<'a> =
     let p = NativePtr.stackalloc<'a> length |> NativePtr.toVoidPtr
     Span<'a>(p, length)
 
-let inline bitcast<'a, 'b> (x:'a) = (# "" x : 'b #)
+// better do not use inline otherwise there will be a lot of bugs
+let bitcast<'a, 'b> (x:'a) = (# "" x : 'b #)
 
 /// target netstandard2.0
 type [<AbstractClass; Sealed>] Random() = 
