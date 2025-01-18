@@ -12,7 +12,7 @@ let inline stackalloc<'a when 'a: unmanaged> (length: int): Span<'a> =
     Span<'a>(p, length)
 
 // better do not use inline otherwise there will be a lot of bugs
-let bitcast<'a, 'b> (x:'a) = (# "" x : 'b #)
+let [<NoCompilerInliningAttribute>] bitcast<'a, 'b> (x:'a) = (# "" x : 'b #)
 
 /// target netstandard2.0
 type [<AbstractClass; Sealed>] Random() = 
